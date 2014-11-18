@@ -56,7 +56,11 @@ namespace GibbsLDA.NET
                         // z_i = z[m][n]
                         // sample from p(z_i|z_-i, w)
                         int topic = sampling(m, n);
-                        trnModel.z[m].Insert(n, topic);
+                        if (topic < 50)
+                        {
+                            trnModel.z[m].Insert(n, topic);
+                        }
+
                     }// end for each word
                 }// end for each document
 
@@ -125,11 +129,13 @@ namespace GibbsLDA.NET
                     break;
             }
 
-            // add newly estimated z_i to count variables
-            trnModel.nw[w][topic] += 1;
-            trnModel.nd[m][topic] += 1;
-            trnModel.nwsum[topic] += 1;
-            trnModel.ndsum[m] += 1;
+            if (topic < 50)
+            {
+                trnModel.nw[w][topic] += 1;
+                trnModel.nd[m][topic] += 1;
+                trnModel.nwsum[topic] += 1;
+                trnModel.ndsum[m] += 1;
+            }
 
             return topic;
         }

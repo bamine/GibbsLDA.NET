@@ -19,10 +19,11 @@ namespace GibbsLDA.NET
             option.niters = 1000;
             option.savestep = 100;
             option.twords = 20;
-            option.dfile = "auchan_clean_full.dat";
-            option.dir = "C:\\Users\\Amine\\Downloads\\JGibbLDA\\models";
+            option.dfile = "trndocs.dat";
+            option.dir = @"C:\Users\Amine\Documents\visual studio 2013\Projects\GibbsLDA.NET\GibbsLDA.NET\data";
             option.est = true;
             option.modelName = "model-final";
+            option.wordMapFileName = "wordmap.txt";
 
             var stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -35,7 +36,6 @@ namespace GibbsLDA.NET
                 //			}
 
                 parser.ParseArguments(args, option);
-
                 if (option.est || option.estc)
                 {
                     Estimator estimator = new Estimator();
@@ -64,17 +64,20 @@ namespace GibbsLDA.NET
             {
                 Console.WriteLine("Command line error: " + cle.Message);
                 showHelp(option);
+                Console.ReadLine();
                 return;
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error in main: " + e.Message);
                 Console.WriteLine(e.StackTrace);
+                Console.ReadLine();
                 return;
             }
 
             stopWatch.Stop();
             Console.WriteLine("\n This run took : " + stopWatch.ElapsedMilliseconds / 1000.0 + " seconds");
+            Console.ReadLine();
         }
 
         public static void showHelp(LDACommandLineOptions option)
