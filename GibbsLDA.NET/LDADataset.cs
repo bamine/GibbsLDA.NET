@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GibbsLDA.NET
 {
-    class LDADataset
+    public class LDADataset
     {
         public WordDictionary LocalDictionary;
         public Document[] Docs;

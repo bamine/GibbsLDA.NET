@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using CommandLine.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,5 +51,12 @@ namespace GibbsLDA.NET
 
         [Option("-wordmap", HelpText = "Specify the wordmap file")]
         public string wordMapFileName { set; get; }
+
+        [HelpOption]
+        public string GetUsage()
+        {
+            return HelpText.AutoBuild(this,
+              (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
+        }
     }
 }

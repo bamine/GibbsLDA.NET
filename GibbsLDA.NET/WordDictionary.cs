@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GibbsLDA.NET
 {
-    class WordDictionary
+    public class WordDictionary
     {
         public Dictionary<string, int> Word2Id;
         public Dictionary<int, string> Id2Word;

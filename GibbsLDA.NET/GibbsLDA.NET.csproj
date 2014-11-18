@@ -48,6 +48,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Conversion.cs" />
     <Compile Include="Document.cs" />
+    <Compile Include="Estimator.cs" />
+    <Compile Include="Inferencer.cs" />
     <Compile Include="LDACommandLineOptions.cs" />
     <Compile Include="LDADataset.cs" />
     <Compile Include="Model.cs" />

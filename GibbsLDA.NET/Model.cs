@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GibbsLDA.NET
 {
-    class Model
+    public class Model
     {
         //---------------------------------------------------------------
         //	Class Variables
@@ -48,13 +48,13 @@ namespace GibbsLDA.NET
 
         // Temp variables while sampling
         public List<int>[] z; //topic assignments for words, size M x doc.size()
-        protected int[][] nw; //nw[i][j]: number of instances of word/term i assigned to topic j, size V x K
-        protected int[][] nd; //nd[i][j]: number of words in document i assigned to topic j, size M x K
-        protected int[] nwsum; //nwsum[j]: total number of words assigned to topic j, size K
-        protected int[] ndsum; //ndsum[i]: total number of words in document i, size M
+        public int[][] nw; //nw[i][j]: number of instances of word/term i assigned to topic j, size V x K
+        public int[][] nd; //nd[i][j]: number of words in document i assigned to topic j, size M x K
+        public int[] nwsum; //nwsum[j]: total number of words assigned to topic j, size K
+        public int[] ndsum; //ndsum[i]: total number of words in document i, size M
 
         // temp variables for sampling
-        protected double[] p;
+        public double[] p;
 
         //---------------------------------------------------------------
         //	Constructors
