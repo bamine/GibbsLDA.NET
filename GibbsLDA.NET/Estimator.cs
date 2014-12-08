@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GibbsLDA.NET
 {
-    public class Estimator
+    public class Estimator 
     {
         // output model
         protected Model trnModel;
